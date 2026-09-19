@@ -1,4 +1,70 @@
-# Miscellaneous
+# ===================================================================
+# 1. KEAMANAN & KUNCI API (JANGAN SAMPAI BOCOR KE PUBLIK)
+# ===================================================================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.jks
+*.keystore
+client_secret*.json
+credentials.json
+token.json
+google-services.json
+GoogleService-Info.plist
+
+# ===================================================================
+# 2. STANDAR FLUTTER & DART
+# ===================================================================
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+/dist/
+
+# File simbol debug Flutter
+*.dSYM/
+
+# ===================================================================
+# 3. ANDROID SPECIFIC
+# ===================================================================
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+
+# ===================================================================
+# 4. WINDOWS SPECIFIC
+# ===================================================================
+**/windows/flutter/ephemeral/
+**/windows/**/GeneratedPluginRegistrant.cc
+**/windows/**/GeneratedPluginRegistrant.h
+*.exe
+*.dll
+
+# ===================================================================
+# 5. IDE & EDITOR (VS Code, Android Studio, IntelliJ)
+# ===================================================================
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ===================================================================
+# 6. FILE SAMPAH SISTEM OPERASI
+# ===================================================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini# Miscellaneous
 *.class
 *.lock
 *.log
