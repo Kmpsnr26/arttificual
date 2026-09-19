@@ -1,0 +1,11 @@
+{
+  "name": "ALE Private AI Human",
+  "short_name": "ALE AI",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#030806",
+  "theme_color": "#69ff9a",
+  "description": "Asisten AI privat ALE dengan mode lokal dan widget digital human.",
+  "scope": "./",
+  "icons": []
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#69ff9a" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>ALE Private AI Human</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar glass">
+      <div>
+        <div class="brand">ALE • PRIVATE AI HUMAN</div>
+        <div id="statusText" class="status">Menyiapkan backend lokal…</div>
+      </div>
+      <div class="top-actions">
+        <button id="panelToggle" class="icon-btn" aria-label="Hide/show control panel">☰</button>
+        <button id="privacyToggle" class="icon-btn" aria-label="Aktifkan mode privasi" aria-pressed="false" title="Mode privasi">◉</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="humanWidget" class="human-widget glass" aria-label="Floating AI human widget">
+        <div class="drag-handle" id="dragHandle">⋮⋮ drag</div>
+        <canvas id="humanCanvas" width="720" height="720"></canvas>
+        <div class="human-caption">
+          <div id="humanName">ALE • FEMALE</div>
+          <div id="humanMode">IDLE</div>
+        </div>
+        <div class="quick-actions">
+          <button id="listenBtn" title="Mikrofon" aria-pressed="false">🎙️</button>
+          <button id="cameraBtn" title="Kamera" aria-pressed="false">📷</button>
+          <button id="speakBtn" title="Simulasi berbicara" aria-pressed="false">💬</button>
+          <button id="minimizeHumanBtn" title="Minimalkan">—</button>
+        </div>
+      </section>
+
+      <aside id="controlPanel" class="panel glass">
+        <div class="panel-title">
+          <span>CONTROL PANEL</span>
+          <button id="closePanel" class="icon-btn">×</button>
+        </div>
+
+        <label>
+          AI Human
+          <select id="genderSelect">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+        </label>
+
+        <label>
+          Binary color
+          <input id="colorPicker" type="color" value="#69ff9a" />
+        </label>
+
+        <label>
+          Glow
+          <input id="glowRange" type="range" min="0" max="40" value="18" />
+        </label>
+
+        <label>
+          Binary density
+          <input id="densityRange" type="range" min="10" max="65" value="34" />
+        </label>
+
+        <label class="check-row">
+          <input id="eyeTrackCheck" type="checkbox" checked />
+          <span>Eye tracking</span>
+        </label>
+
+        <label class="check-row">
+          <input id="headTrackCheck" type="checkbox" checked />
+          <span>Head tracking</span>
+        </label>
+
+        <label class="check-row">
+          <input id="blinkCheck" type="checkbox" checked />
+          <span>Auto blink</span>
+        </label>
+
+        <label class="check-row">
+          <input id="transparentCheck" type="checkbox" checked />
+          <span>Transparent widget</span>
+        </label>
+
+        <div class="divider"></div>
+
+        <div class="capability-grid">
+          <button id="micCapability">Microphone<br><small id="micState">off</small></button>
+          <button id="camCapability">Camera<br><small id="camState">off</small></button>
+          <button id="netCapability">Backend<br><small id="backendState">checking</small></button>
+          <button id="localCapability">Perangkat<br><small>localhost</small></button>
+          <button id="cloudCapability">Cloud<br><small>menunggu secret</small></button>
+          <button id="agentCapability">AI Lokal<br><small id="providerState">offline</small></button>
+        </div>
+
+        <div class="divider"></div>
+
+        <label>
+          Mode AI
+          <select id="providerSelect">
+            <option value="auto">Otomatis — Ollama / offline</option>
+            <option value="offline">Offline cepat</option>
+            <option value="ollama">Ollama lokal</option>
+            <option value="openai" disabled>OpenAI Cloud — menunggu secret</option>
+          </select>
+        </label>
+
+        <div id="chatLog" class="chat-log" role="log" aria-live="polite"></div>
+        <div class="chat-row">
+          <input id="chatInput" placeholder="Ketik pesan untuk ALE…" autocomplete="off" maxlength="4000" />
+          <button id="sendBtn">Kirim</button>
+        </div>
+        <button id="clearChatBtn" class="text-btn">Hapus percakapan lokal</button>
+
+        <div class="security-note">
+          Kamera dan mikrofon hanya aktif setelah izin diberikan. Mode privasi menghentikan keduanya. Key cloud tidak pernah disimpan di browser.
+        </div>
+      </aside>
+
+      <button id="restoreHumanBtn" class="restore-human glass hidden">ALE ◉</button>
+    </main>
+  </div>
+
+  <video id="cameraPreview" playsinline muted class="hidden"></video>
+  <script src="app.js"></script>
+</body>
+</html>
