@@ -1,0 +1,13 @@
+{
+  "name": "ale-private-ai-desktop",
+  "version": "0.2.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check main.js"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0"
+  }
+}
